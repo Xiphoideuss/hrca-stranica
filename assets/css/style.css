@@ -52,7 +52,8 @@ body {
 
 h1,
 h2,
-p {
+h3,
+h4 p {
   margin: 0;
 }
 
@@ -360,7 +361,7 @@ img {
 
 /* ===== FOOTER =====*/
 .footer {
-  background-color:  hsl(224, 20%, 10%);
+  background-color: hsl(224, 20%, 10%);
   background-color: #0F2A36;
   color: #fff;
   text-align: center;
@@ -391,7 +392,7 @@ img {
   font-size: var(--smaller-font-size);
 }
 
-/* SCROLL TOP BUTTON */
+/* ===== SCROLL TOP BUTTON ===== */
 .scroll-top {
   position: fixed;
   right: 1.2rem;
@@ -417,4 +418,35 @@ img {
 .scroll-top.show-scroll {
   opacity: 1;
   visibility: visible;
+}
+
+
+/* ===== CIJENIK ===== */
+
+.cijene {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.pricing__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* ⭐ BITNO */
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pricing__text h3 {
+  flex: 1;
+  /* tekst smije zauzeti sav prostor */
+  font-weight: 500;
+  padding-top: var(--mb-3);
+}
+
+.pricing__price {
+  white-space: nowrap;
+  /* cijena nikad u novi red */
+  font-weight: 600;
 }

@@ -71,6 +71,12 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 4
 sr.reveal('.home__social-icon', { interval: 200 });
 sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 }); 
 
+// ===== DODAJEMO CIJENIK =====
+sr.reveal('#pricing .section-title', { origin: 'top' }); // naslov Cijenik
+sr.reveal('.cijene', { delay: 200 });                    // H3 "Cijene radova do 3m²"
+sr.reveal('.pricing__item', { interval: 150 });         // svaki item
+sr.reveal('.pricing__note', { delay: 300 });            // napomena
+
 
 
 

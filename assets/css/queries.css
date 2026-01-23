@@ -106,7 +106,7 @@
   }
 
   .nav__item {
-    margin-left: var(--mb-6);
+    margin-left: var(--mb-3);
     margin-bottom: 0;
   }
 
@@ -146,6 +146,11 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
   }
+
+  /* ===== CIJENIK ===== */
+  .cijenik {
+    margin-top: 4rem;
+  }
 }
 
 /* ------------------------ min-width: 991px ----------------------------- */
@@ -181,5 +186,14 @@
   .section-title::after {
     width: 150px;
     top: 3rem;
+  }
+
+  /* ===== CIJENIK ===== */
+  .cijenik {
+    margin-top: 4rem;
+  }
+
+  .cijene {
+    font-size: 2rem;
   }
 }
