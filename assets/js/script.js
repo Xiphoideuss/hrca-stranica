@@ -1,97 +1,125 @@
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId)
-
+          nav = document.getElementById(navId);
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
-            nav.classList.toggle('show')
-        })
+            nav.classList.toggle('show');
+        });
     }
-}
-showMenu('nav-toggle', 'nav-menu')
+};
+showMenu('nav-toggle', 'nav-menu');
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+/*===== REMOVE MENU MOBILE =====*/
+const navLink = document.querySelectorAll('.nav__link');
+navLink.forEach(n => n.addEventListener('click', () => {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.remove('show');
+}));
 
-function linkAction() {
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+/*===== SCROLL SECTIONS ACTIVE LINK =====*/
+const navLinks = document.querySelectorAll('.nav__menu a');
 const sections = document.querySelectorAll('section[id]');
 const footer = document.getElementById('contact');
-const navLinks = document.querySelectorAll('.nav__menu a');
 
 const scrollActive = () => {
-  const scrollDown = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const docHeight = document.documentElement.scrollHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
 
-  // ukloni sve active-link
-  navLinks.forEach(link => link.classList.remove('active-link'));
+    navLinks.forEach(link => link.classList.remove('active-link'));
 
-  // provjeri footer kao posebnu stavku
-  if (scrollDown + windowHeight >= docHeight - 5) {
-    const footerLink = document.querySelector('.nav__menu a[href*="contact"]');
-    footerLink?.classList.add('active-link');
-    return; // footer je na vrhu → prekini daljnju provjeru
-  }
+    let maxVisible = {section: null, height: 0};
 
-  // za sve ostale sekcije
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 70;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute('id');
-    const link = document.querySelector(`.nav__menu a[href*="${sectionId}"]`);
-    if (!link) return;
+    // provjeri sve sekcije
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        if (visibleHeight > maxVisible.height) {
+            maxVisible = {section, height: visibleHeight};
+        }
+    });
 
-    if (scrollDown >= sectionTop && scrollDown < sectionTop + sectionHeight) {
-      link.classList.add('active-link');
+    // provjeri footer
+    if (footer) {
+        const rect = footer.getBoundingClientRect();
+        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        if (visibleHeight > maxVisible.height) {
+            maxVisible = {section: footer, height: visibleHeight};
+        }
     }
-  });
+
+    // poseban slučaj: ako si pri dnu dokumenta, aktiviraj footer
+    if (scrollY + windowHeight >= docHeight - 2) { // -2px tolerance
+        maxVisible.section = footer;
+    }
+
+    if (maxVisible.section) {
+        let selector;
+        if (maxVisible.section.id === 'pricing') {
+            selector = '.nav__menu a[href*="cijenik.html"]';
+        } else if (maxVisible.section.id === 'contact') {
+            selector = '.nav__menu a[href*="#contact"]';
+        } else {
+            selector = `.nav__menu a[href*="${maxVisible.section.id}"]`;
+        }
+        document.querySelector(selector)?.classList.add('active-link');
+    }
 };
 
 window.addEventListener('scroll', scrollActive);
+window.addEventListener('load', scrollActive);
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',
-    distance: '60px',
-    duration: 1200,
-    delay: 100,
-    //     reset: true
+    distance: '50px',
+    duration: 1200,   // brže animacije
+    delay: 150,       // manji delay po defaultu
+    reset: false      // animacija se ne ponavlja
 });
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
-sr.reveal('.home__social-icon', { interval: 200 });
-sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 }); 
-
-// ===== DODAJEMO CIJENIK =====
-sr.reveal('#pricing .section-title', { origin: 'top' }); // naslov Cijenik
-sr.reveal('.cijene', { delay: 200 });                    // H3 "Cijene radova do 3m²"
-sr.reveal('.pricing__item', { interval: 150 });         // svaki item
-sr.reveal('.pricing__note', { delay: 300 });            // napomena
-
-
-
-
-
-const scrollTop = document.getElementById('scroll-top');
-
-window.addEventListener('scroll', () => {
-    if(window.scrollY >= 300){
-        scrollTop.classList.add('show-scroll');
-    } else {
-        scrollTop.classList.remove('show-scroll');
+/* Helper funkcija */
+function revealIfExists(selector, options = {}) {
+    if (document.querySelector(selector)) {
+        sr.reveal(selector, options);
     }
-});
+}
 
-scrollTop.addEventListener('click', (e) => {
+/* ===== HOME ===== */
+revealIfExists('.home__data');
+revealIfExists('.home__img', { delay: 200 });
+revealIfExists('.home__social-icon', { interval: 100 });
+
+/* ===== ABOUT ===== */
+revealIfExists('.about__img');
+revealIfExists('.about__subtitle', { delay: 150 });
+revealIfExists('.about__text', { delay: 200 });
+
+/* ===== SKILLS ===== */
+revealIfExists('.skills__subtitle');
+revealIfExists('.skills__text', { delay: 150 });
+revealIfExists('.skills__img', { delay: 200 });
+revealIfExists('.skills__data', { interval: 150 });
+
+/* ===== WORK / GALERIJA ===== */
+revealIfExists('.work__img', { interval: 120 });
+
+/* ===== CONTACT ===== */
+revealIfExists('.contact__input', { interval: 150 });
+
+/* ===== CIJENIK ===== */
+revealIfExists('#pricing .section-title');
+revealIfExists('.cijene', { delay: 150 });
+revealIfExists('.pricing__item', { interval: 120 });
+
+/*===== SCROLL TOP =====*/
+const scrollTop = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+    if (window.scrollY >= 300) scrollTop.classList.add('show-scroll');
+    else scrollTop.classList.remove('show-scroll');
+});
+scrollTop.addEventListener('click', e => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
