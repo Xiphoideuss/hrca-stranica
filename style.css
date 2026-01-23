@@ -6,7 +6,8 @@
   --header-height: 3rem;
   --font-semi: 600;
   --hue-color: 224;
-  --first-color: hsl(var(--hue-color), 89%, 60%);
+  /* --first-color: hsl(var(--hue-color), 89%, 60%); */
+  --first-color: #0292AF;
   --second-color: hsl(var(--hue-color), 56%, 12%);
   --body-font: 'Poppins', sans-serif;
   --big-font-size: 2rem;
@@ -229,15 +230,11 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 260px;
+  width: 300px;
 }
 
 .home__blob {
   fill: var(--first-color);
-}
-
-.home__blob-img {
-  width: 360px;
 }
 
 /*BUTTONS*/
@@ -322,22 +319,6 @@ img {
   z-index: var(--z-back);
 }
 
-/* .skills__html {
-  width: 95%;
-}
-
-.skills__css {
-  width: 85%;
-}
-
-.skills__js {
-  width: 65%;
-}
-
-.skills__ux {
-  width: 85%;
-} */
-
 .skills__pz {
   width: 170px;
 }
@@ -377,29 +358,10 @@ img {
   transform: scale(1.1);
 }
 
-/* ===== CONTACT =====*/
-/* .contact__input {
-  width: 100%;
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-semi);
-  padding: 1rem;
-  border-radius: .5rem;
-  border: 1.5px solid var(--second-color);
-  outline: none;
-  margin-bottom: var(--mb-4);
-}
-.contact__button {
-  display: block;
-  border: none;
-  outline: none;
-  font-size: var(--normal-font-size);
-  cursor: pointer;
-  margin-left: auto;
-} */
-
 /* ===== FOOTER =====*/
 .footer {
   background-color:  hsl(224, 20%, 10%);
+  background-color: #0F2A36;
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);
@@ -434,15 +396,15 @@ img {
   position: fixed;
   right: 1.2rem;
   bottom: 1.2rem;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: var(--first-color);
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.75rem;
-  border-radius: 15%;
+  border-radius: 12%;
   border: 3px solid #fff;
   font-size: 1.5rem;
   cursor: pointer;
