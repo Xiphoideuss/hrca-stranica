@@ -333,7 +333,7 @@ img {
 }
 
 .skills__orsg {
-  width: 250px;
+  width: 265px;
 }
 
 .skills__img {
@@ -426,6 +426,14 @@ img {
 .cijene {
   text-align: center;
   font-size: 1.5rem;
+}
+
+.grupacije__cijena{
+  text-transform: uppercase;
+  font-style: italic;
+  margin-top: var(--mb-6);
+  font-size: 1.4rem;
+  margin-left: var(--mb-2);
 }
 
 .pricing__item {
