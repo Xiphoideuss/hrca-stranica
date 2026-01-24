@@ -231,7 +231,8 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 300px;
+  width: 280px;
+  z-index: -100;
 }
 
 .home__blob {

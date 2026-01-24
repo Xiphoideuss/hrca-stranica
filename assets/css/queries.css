@@ -32,7 +32,6 @@
 
   .home__img {
     width: 300px;
-    bottom: 25%;
   }
 
   .about__container {
@@ -123,7 +122,7 @@
   }
 
   .home__img {
-    width: 400px;
+    width: 300px;
     bottom: 10%;
   }
 
@@ -166,7 +165,7 @@
   }
 
   .home__img {
-    width: 550px;
+    width: 450px;
   }
 
   .home__img img {
