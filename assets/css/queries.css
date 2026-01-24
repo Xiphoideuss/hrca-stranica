@@ -122,8 +122,8 @@
   }
 
   .home__img {
-    width: 300px;
-    bottom: 10%;
+    width: 400px;
+    top: 7rem;
   }
 
   .about__container {
@@ -165,12 +165,7 @@
   }
 
   .home__img {
-    width: 450px;
-  }
-
-  .home__img img {
-    width: 550px;
-
+    width: 500px;
   }
 
   .home__title {
