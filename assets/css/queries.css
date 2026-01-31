@@ -123,7 +123,7 @@
 
   .home__img {
     width: 400px;
-    top: 7rem;
+    top: 9rem;
   }
 
   .about__container {
@@ -152,6 +152,13 @@
   }
 }
 
+/* ===== GALERIJA ===== */
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem;
+  }
+
 /* ------------------------ min-width: 991px ----------------------------- */
 
 @media screen and (min-width: 991px) {
@@ -166,6 +173,7 @@
 
   .home__img {
     width: 500px;
+    margin-top: 3rem;
   }
 
   .home__title {
@@ -191,3 +199,23 @@
     font-size: 2rem;
   }
 }
+
+/* ===== GALERIJA ===== */
+
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2rem;
+  }
+
+  .masonry-item {
+    padding: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .masonry-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }

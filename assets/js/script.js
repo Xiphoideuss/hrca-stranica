@@ -1,7 +1,7 @@
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
-          nav = document.getElementById(navId);
+        nav = document.getElementById(navId);
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
             nav.classList.toggle('show');
@@ -17,51 +17,47 @@ navLink.forEach(n => n.addEventListener('click', () => {
     navMenu.classList.remove('show');
 }));
 
-/*===== SCROLL SECTIONS ACTIVE LINK =====*/
+
+/*===== SCROLL SECTIONS ACTIVE LINK - GORNJA SEKCIJA =====*/
 const navLinks = document.querySelectorAll('.nav__menu a');
 const sections = document.querySelectorAll('section[id]');
 const footer = document.getElementById('contact');
 
 const scrollActive = () => {
     const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
 
-    navLinks.forEach(link => link.classList.remove('active-link'));
-
-    let maxVisible = {section: null, height: 0};
+    let currentSection = null;
 
     // provjeri sve sekcije
-    sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-        if (visibleHeight > maxVisible.height) {
-            maxVisible = {section, height: visibleHeight};
-        }
-    });
+sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120; // visina headera
+    const sectionHeight = section.offsetHeight;
 
-    // provjeri footer
-    if (footer) {
-        const rect = footer.getBoundingClientRect();
-        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-        if (visibleHeight > maxVisible.height) {
-            maxVisible = {section: footer, height: visibleHeight};
-        }
+    if (
+        scrollY >= sectionTop &&
+        scrollY < sectionTop + sectionHeight
+    ) {
+        currentSection = section;
+    }
+});
+
+    // provjeri footer posebno
+    if (scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+        currentSection = footer;
     }
 
-    // poseban slučaj: ako si pri dnu dokumenta, aktiviraj footer
-    if (scrollY + windowHeight >= docHeight - 2) { // -2px tolerance
-        maxVisible.section = footer;
-    }
+    // ukloni sve active-link
+    navLinks.forEach(link => link.classList.remove('active-link'));
 
-    if (maxVisible.section) {
+    // dodaj active-link na trenutnu sekciju
+    if (currentSection) {
         let selector;
-        if (maxVisible.section.id === 'pricing') {
+        if (currentSection.id === 'pricing') {
             selector = '.nav__menu a[href*="cijenik.html"]';
-        } else if (maxVisible.section.id === 'contact') {
+        } else if (currentSection.id === 'contact') {
             selector = '.nav__menu a[href*="#contact"]';
         } else {
-            selector = `.nav__menu a[href*="${maxVisible.section.id}"]`;
+            selector = `.nav__menu a[href*="${currentSection.id}"]`;
         }
         document.querySelector(selector)?.classList.add('active-link');
     }
@@ -123,3 +119,151 @@ scrollTop.addEventListener('click', e => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+//----------------------- LIGHTBOX FUNCTIONALITY -----------------------
+function initLightbox() {
+  const masonryItems = document.querySelectorAll('.masonry-item');
+  const images = [];
+
+  // Prikuplja sve slike
+  masonryItems.forEach(item => {
+    const link = item.querySelector('a');
+    const img = item.querySelector('img');
+    const title = item.querySelector('h3');
+    const size = item.querySelector('p');
+
+    // Preskoči ako link ima klasu no-lightbox
+    if (link && link.classList.contains('no-lightbox')) {
+      return;
+    }
+
+    if (link && img) {
+      images.push({
+        src: link.href,
+        alt: img.alt || '',
+        title: title ? title.textContent : '',
+        size: size ? size.textContent : ''
+      });
+
+      // Dodan click na event
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const index = images.findIndex(img => img.src === link.href);
+        openLightbox(index);
+      });
+    }
+  });
+
+  let currentIndex = 0;
+  let lightbox = document.getElementById('lightbox');
+
+  // Ne kreira lightbox ako ne postoji
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <img class="lightbox-img" src="" alt="">
+                <div class="lightbox-caption"></div>
+                <div class="lightbox-counter"></div>
+            </div>
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&#10094;</button>
+            <button class="lightbox-next">&#10095;</button>
+        `;
+    document.body.appendChild(lightbox);
+  }
+
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+  const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+  const lightboxClose = lightbox.querySelector('.lightbox-close');
+  const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+  const lightboxNext = lightbox.querySelector('.lightbox-next');
+
+  function openLightbox(index) {
+    if (images.length === 0) return;
+
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+  }
+
+  function updateLightbox() {
+    const image = images[currentIndex];
+    lightboxImg.src = image.src;
+    lightboxImg.alt = image.alt;
+    lightboxCaption.textContent = `${image.title} - ${image.size}`;
+    lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+  }
+
+  // Event listeneri
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', showPrev);
+  lightboxNext.addEventListener('click', showNext);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+
+  // Swipe za mobilne uređaje
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        showNext();
+      } else {
+        showPrev();
+      }
+    }
+  }
+
+  return {
+    open: openLightbox,
+    close: closeLightbox,
+    next: showNext,
+    prev: showPrev
+  };
+}
+
+document.addEventListener('DOMContentLoaded', initLightbox);
