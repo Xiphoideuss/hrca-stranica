@@ -309,6 +309,7 @@ img {
 .skills__names {
   display: flex;
   align-items: center;
+  color: black;
 }
 
 .skills__bar {
@@ -429,7 +430,7 @@ img {
   font-size: 1.5rem;
 }
 
-.grupacije__cijena{
+.grupacije__cijena {
   text-transform: uppercase;
   font-style: italic;
   margin-top: var(--mb-6);
@@ -454,10 +455,12 @@ img {
   padding-top: var(--mb-3);
 }
 
-.pricing__price {
-  white-space: nowrap;
-  /* cijena nikad u novi red */
-  font-weight: 600;
+#pregradni-zidovi-c,
+#spušteni-stropovi-c,
+#oblaganje-zidova-c,
+#ostali-radovi-c {
+  scroll-margin-top: 120px;
+  /* isto kao visina headera */
 }
 
 /* ===== GALERIJA ===== */
