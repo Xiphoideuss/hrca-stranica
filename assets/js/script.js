@@ -100,7 +100,10 @@ revealIfExists('.skills__img', { delay: 200 });
 revealIfExists('.skills__data', { interval: 150 });
 
 /* ===== WORK / GALERIJA ===== */
-revealIfExists('.work__img', { interval: 120 });
+revealIfExists('.section-title', { interval: 120 }); // tvoj trenutni
+revealIfExists('.masonry-item', { interval: 100, distance: '30px', origin: 'bottom' });
+revealIfExists('.masonry-item h3', { delay: 100, distance: '20px', origin: 'bottom' });
+revealIfExists('.masonry-item p', { delay: 150, distance: '20px', origin: 'bottom' });
 
 /* ===== CONTACT ===== */
 revealIfExists('.contact__input', { interval: 150 });
