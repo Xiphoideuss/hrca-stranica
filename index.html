@@ -2,125 +2,139 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/queries.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/queries.css">
 
-    <!-- =====BOX ICONS===== -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <!-- =====BOX ICONS===== -->
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>B&R Interijeri</title>
+  <title>B&R Interijeri</title>
 </head>
 
 <body>
-    <!--===== HEADER =====-->
-    <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="#home" class="nav__logo">B&R Interijeri</a>
+  <!--===== HEADER =====-->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div>
+        <a href="#home" class="nav__logo">B&R Interijeri</a>
+      </div>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Radovi</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">O nama</a></li>
+          <li class="nav__item"><a href="galerija.html" class="nav__link">Galerija</a></li>
+          <li class="nav__item"><a href="cijenik.html" class="nav__link">Cijenik</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="l-main">
+    <!--===== HOME =====-->
+    <section class="home bd-grid" id="home">
+      <div class="home__data">
+        <h1 class="home__title"><span class="home__title-color">B&R</span><br> Interijeri</h1>
+        <h2><span class="home__subtitle">Obrt za radove <br>suhe gradnje</span></h2>
+        <a href="cijenik.html" class="button">Cijenik</a>
+      </div>
+
+      <div class="home__social">
+        <a href="https://www.facebook.com/p/BR-Interijeri-100083519222552/" class="home__social-icon"><i
+            class='bx bxl-facebook'></i></a>
+        <a href="mailto:brinterijeri2022@yahoo.com" class="home__social-icon"><i class='bx bx-envelope'></i></a>
+        <a href="tel:+385998270154" class="home__social-icon"><i class='bx bx-phone'></i></a>
+      </div>
+
+      <div class="home__img">
+        <img src="/assets/img/hrca.jpg" alt="Marlon" class="home__blob-img">
+      </div>
+    </section>
+
+    <!--===== SKILLS =====-->
+    <section class="skills section" id="skills">
+      <h2 class="section-title">Radovi</h2>
+      <h2 class="skills__subtitle">Izvođenje radova</h2>
+      <div class="skills__container bd-grid">
+
+        <div>
+          <!-- <img src="assets/img/work3.jpg" alt="" class="skills__img"> -->
+          <a href="cijenik.html#pregradni-zidovi-c">
+            <div class="skills__data">
+              <div class="skills__names"><span class="skills__name">PREGRADNI ZIDOVI</span></div>
+              <div class="skills__bar skills__pz"></div>
             </div>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">O nama</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Radovi</a></li>
-                    <li class="nav__item"><a href="galerija.html" class="nav__link">Galerija</a></li>
-                    <li class="nav__item"><a href="cijenik.html" class="nav__link">Cijenik</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Kontakt</a></li>
-                </ul>
+          </a>
+          <a href="cijenik.html#spušteni-stropovi-c">
+            <div class="skills__data">
+              <div class="skills__names"><span class="skills__name">SPUŠTENI STROPOVI</span></div>
+              <div class="skills__bar skills__ss"></div>
             </div>
-
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
+          </a>
+          <a href="cijenik.html#oblaganje-zidova-c">
+            <div class="skills__data">
+              <div class="skills__names"><span class="skills__name">OBLAGANJE ZIDOVA</span></div>
+              <div class="skills__bar skills__oz"></div>
             </div>
-        </nav>
-    </header>
+          </a>
 
-    <main class="l-main">
-        <!--===== HOME =====-->
-        <section class="home bd-grid" id="home">
-            <div class="home__data">
-                <h1 class="home__title"><span class="home__title-color">B&R</span><br> Interijeri</h1>
-                <h2><span class="home__subtitle">Obrt za radove <br>suhe gradnje</span></h2>
-                <a href="cijenik.html" class="button">Cijenik</a>
+          <a href="cijenik.html#ostali-radovi-c">
+            <div class="skills__data">
+              <div class="skills__names"><span class="skills__name">OSTALI RADOVI SUHE GRADNJE</span>
+              </div>
+              <div class="skills__bar skills__orsg"></div>
             </div>
+          </a>
+        </div>
 
-            <div class="home__social">
-                <a href="https://www.facebook.com/p/BR-Interijeri-100083519222552/" class="home__social-icon"><i
-                        class='bx bxl-facebook'></i></a>
-                <a href="mailto:brinterijeri2022@yahoo.com" class="home__social-icon"><i class='bx bx-envelope'></i></a>
-                <a href="tel:+385998270154" class="home__social-icon"><i class='bx bx-phone'></i></a>
-            </div>
+        <div>
+          <p class="skills__text">Naš obrt se bavi kvalitetnim izvođenjem svih vrsta suhe gradnje i završnih radova.
+            Bilo da uređujete novi prostor ili preuređujete postojeći, pružamo stručnu i pouzdanu uslugu uz preciznost i
+            pažnju prema detaljima. Naša ponuda uključuje uređenje potkrovlja, obloge zidova i stropova, izradu
+            pregradnih zidova, spuštenih stropova, gletanje i pripremu površina te ostale radove suhe gradnje. Vaš dom
+            je naš dom. Koristimo kvalitetne materijale i stručne metode izvođenja kako bismo svaki projekt završili
+            precizno, brzo i pouzdano. Kontaktirajte nas za besplatnu procjenu i savjetovanje!</p>
+        </div>
+      </div>
+    </section>
 
-            <div class="home__img">
-                <img src="/assets/img/hrca.jpg" alt="Marlon" class="home__blob-img">
-            </div>
-        </section>
+    <!--===== ABOUT =====-->
+    <section class="about section" id="about">
+      <h2 class="section-title">O nama</h2>
+      <div class="about__container bd-grid">
+        <!-- <div class="about__img">
+          <img src="assets/img/naslovna.jpg" alt="">
+        </div> -->
+        <div>
+          <h2 class="about__subtitle">B&R INTERIJERI d.o.o.</h2>
+          <p class="about__text">Vlasnik: Hrvoje Rittinger <br>
+            Osnovano: 2024. godine <br>
+            OIB: 79522150755 | MB: 04611268 <br> <br>
 
-        <!--===== ABOUT =====-->
-        <section class="about section" id="about">
-            <h2 class="section-title">O nama</h2>
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <img src="assets/img/naslovna.jpg" alt="">
-                </div>
-                <div>
-                    <h2 class="about__subtitle">B&R Interijeri</h2>
-                    <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum
-                        expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo
-                        recusandae cumque perferendis! Recusandae alias accusamus atque.</p>
-                </div>
-            </div>
-        </section>
+            B&R INTERIJERI d.o.o. je mikro poduzetnik s privatnim vlasništvom od osnivanja. <br>
 
-        <!--===== SKILLS =====-->
-        <section class="skills section" id="skills">
-            <h2 class="section-title">Radovi</h2>
-            <div class="skills__container bd-grid">
-                <div>
-                    <h2 class="skills__subtitle">Izvođenje radova</h2>
-                    <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id
-                        vero amet, alias architecto consectetur error eum eaque sit.</p>
+            Naša vizija je pružiti klijentima pouzdanost, kvalitetu i dugotrajna rješenja za uređenje prostora. Svaki
+            projekt tretiramo s maksimalnom pažnjom i profesionalizmom, a cilj nam je stvoriti prostore koji su
+            funkcionalni, estetski privlačni i u skladu s željama korisnika.
+            S fokusom na detalje i kvalitetu izvedbe, gradimo povjerenje kroz transparentan rad i poštivanje dogovorenih
+            rokova.</p>
+        </div>
+      </div>
+    </section>
 
-                    <a href="cijenik.html#pregradni-zidovi-c">
-                        <div class="skills__data">
-                            <div class="skills__names"><span class="skills__name">PREGRADNI ZIDOVI</span></div>
-                            <div class="skills__bar skills__pz"></div>
-                        </div>
-                    </a>
-                    <a href="cijenik.html#spušteni-stropovi-c">
-                        <div class="skills__data">
-                            <div class="skills__names"><span class="skills__name">SPUŠTENI STROPOVI</span></div>
-                            <div class="skills__bar skills__ss"></div>
-                        </div>
-                    </a>
-                    <a href="cijenik.html#oblaganje-zidova-c">
-                        <div class="skills__data">
-                            <div class="skills__names"><span class="skills__name">OBLAGANJE ZIDOVA</span></div>
-                            <div class="skills__bar skills__oz"></div>
-                        </div>
-                    </a>
 
-                    <a href="cijenik.html#ostali-radovi-c">
-                        <div class="skills__data">
-                            <div class="skills__names"><span class="skills__name">OSTALI RADOVI SUHE GRADNJE</span>
-                            </div>
-                            <div class="skills__bar skills__orsg"></div>
-                        </div>
-                    </a>
-                </div>
 
-                <div>
-                    <img src="assets/img/work3.jpg" alt="" class="skills__img">
-                </div>
-            </div>
-        </section>
-
-        <!--===== WORK =====-->
-        <!-- <section class="work section" id="work">
+    <!--===== WORK =====-->
+    <!-- <section class="work section" id="work">
             <h2 class="section-title">Galerija</h2>
             <div class="work__container bd-grid">
                 <a href="#" class="work__img"><img src="/assets/img/work1.jpg" alt=""></a>
@@ -132,31 +146,31 @@
             </div>
         </section> -->
 
-        <!--===== FOOTER =====-->
-        <footer class="footer" id="contact">
-            <p class="footer__title">B&R Interijeri</p>
-            <div class="footer__social">
-                <a href="https://www.facebook.com/p/BR-Interijeri-100083519222552/" target="_blank"
-                    class="footer__icon"><i class='bx bxl-facebook'></i></a>
-                <a href="mailto:brinterijeri2022@yahoo.com" class="footer__icon"><i class='bx bx-envelope'></i></a>
-                <a href="tel:+385998270154" class="footer__icon"><i class='bx bx-phone'></i></a>
-            </div>
-            <div class="footer__tel">
-                <p>tel: +38595998270154</p>
-            </div>
-            <p class="footer__copy">&#169; by Xiphoideuss. All rights reserved</p>
-        </footer>
+    <!--===== FOOTER =====-->
+    <footer class="footer" id="contact">
+      <p class="footer__title">B&R Interijeri</p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/p/BR-Interijeri-100083519222552/" target="_blank" class="footer__icon"><i
+            class='bx bxl-facebook'></i></a>
+        <a href="mailto:brinterijeri2022@yahoo.com" class="footer__icon"><i class='bx bx-envelope'></i></a>
+        <a href="tel:+385998270154" class="footer__icon"><i class='bx bx-phone'></i></a>
+      </div>
+      <div class="footer__tel">
+        <p>tel: +38595998270154</p>
+      </div>
+      <p class="footer__copy">&#169; by Xiphoideuss. All rights reserved</p>
+    </footer>
 
-        <!-- ===== SCROLL TOP BUTTON ===== -->
-        <a href="#" class="scroll-top" id="scroll-top">
-            <i class='bx bx-up-arrow-alt'></i>
-        </a>
+    <!-- ===== SCROLL TOP BUTTON ===== -->
+    <a href="#" class="scroll-top" id="scroll-top">
+      <i class='bx bx-up-arrow-alt'></i>
+    </a>
 
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
-        <!--===== MAIN JS =====-->
-        <script src="/assets/js/script.js"></script>
+    <!--===== MAIN JS =====-->
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>
