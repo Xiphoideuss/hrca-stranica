@@ -53,7 +53,8 @@ body {
 h1,
 h2,
 h3,
-h4 p {
+h4,
+p {
   margin: 0;
 }
 
@@ -83,17 +84,6 @@ img {
   text-align: center;
 }
 
-/* .section-title::after {
-  position: absolute;
-  content: '';
-  width: 95px;
-  height: 0.18rem;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 2rem;
-  background-color: var(--first-color);
-} */
 .section {
   padding-top: 3rem;
   padding-bottom: 2rem;
@@ -255,6 +245,7 @@ img {
 }
 
 /* ===== ABOUT =====*/
+
 .about__container {
   row-gap: 2rem;
   text-align: center;
@@ -342,25 +333,6 @@ img {
 .skills__img {
   border-radius: .5rem;
 }
-
-/* ===== WORK =====*/
-/* .work__container {
-  row-gap: 2rem;
-}
-
-.work__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: .5rem;
-  overflow: hidden;
-}
-
-.work__img img {
-  transition: 1s;
-}
-
-.work__img img:hover {
-  transform: scale(1.1);
-} */
 
 /* ===== FOOTER =====*/
 .footer {
