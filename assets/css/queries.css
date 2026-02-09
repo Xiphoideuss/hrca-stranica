@@ -34,14 +34,6 @@
     width: 300px;
   }
 
-
-
-  .work__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    padding-top: 2rem;
-  }
-
   .contact__form {
     width: 360px;
     padding-top: 2rem;
@@ -140,14 +132,16 @@
   .cijenik {
     margin-top: 4rem;
   }
+
+  /* ===== GALERIJA ===== */
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem;
+  }
 }
 
-/* ===== GALERIJA ===== */
-.masonry-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 2rem;
-}
+
 
 /* ------------------------ min-width: 991px ----------------------------- */
 
@@ -192,17 +186,17 @@
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
-  gap: 2rem;
+  gap: 1rem;
 }
 
-.masonry-item {
+.masonry-item img {
   padding: 1.2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.masonry-item:hover {
+.masonry-item img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
 }
 
 .section-title {
