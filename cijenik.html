@@ -2,44 +2,41 @@
 <html lang="hr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B&R Interijeri</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&R Interijeri</title>
 
-  <!-- Google Search Console verifikacija -->
-  <meta name="google-site-verification" content="" />
+    <!-- Osnovni SEO meta tagovi -->
+    <meta name="description" content="br interijeri - Suha gradnja">
+    <meta name="keywords" content="br interijeri b&r interijeri, suha gradnja, spušteni stropovi, pregradni zidovi">
+    <meta name="author" content="br interijeri">
+    <meta name="robots" content="index, follow">
 
-  <!-- Osnovni SEO meta tagovi -->
-  <meta name="description" content="br interijeri - Suha gradnja">
-  <meta name="keywords" content="br interijeri b&r interijeri, suha gradnja, spušteni stropovi, pregradni zidovi">
-  <meta name="author" content="br interijeri">
-  <meta name="robots" content="index, follow">
+    <!-- Open Graph za društvene mreže -->
+    <meta property="og:title" content="B&R Interijeri">
+    <meta property="og:description" content="Suha gradnja">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://brinterijeri.com/assets/img/hrca.jpg">
+    <meta property="og:url" content="https://brinterijeri.com">
+    <meta property="og:site_name" content="B&R Interijeri">
 
-  <!-- Open Graph za društvene mreže -->
-  <meta property="og:title" content="B&R Interijeri">
-  <meta property="og:description" content="Suha gradnja">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://brinterijeri.com/assets/img/hrca.jpg">
-  <meta property="og:url" content="https://brinterijeri.com">
-  <meta property="og:site_name" content="B&R Interijeri">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="B&R Interijeri - Suha gradnja">
+    <meta name="twitter:description" content="Suha gradnja, pregradni zidovi">
+    <meta name="twitter:image" content="https://brinterijeri.com/assets/img/hrca.jpg">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="B&R Interijeri - Suha gradnja">
-  <meta name="twitter:description" content="Suha gradnja, pregradni zidovi">
-  <meta name="twitter:image" content="https://brinterijeri.com/assets/img/hrca.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/img/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" href="/assets/img/android-chrome-192x192.png">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <!--===== CSS =====-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/queries.css">
 
-  <!--===== CSS =====-->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/queries.css">
-
-  <!-- =====BOX ICONS===== -->
-  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
 
 </head>
@@ -58,7 +55,7 @@
                     <li class="nav__item"><a href="index.html#skills" class="nav__link">Radovi</a></li>
                     <li class="nav__item"><a href="index.html#about" class="nav__link">O nama</a></li>
                     <li class="nav__item"><a href="galerija.html" class="nav__link">Galerija</a></li>
-                    <li class="nav__item"><a href="cijenik.html" class="nav__link">Cijenik</a></li>
+                    <li class="nav__item"><a href="cijenik.html" class="nav__link">Cjenik</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Kontakt</a></li>
                 </ul>
             </div>
@@ -73,144 +70,211 @@
         <!--===== CIJENIK =====-->
 
         <section class="pricing section bd-grid" id="pricing">
-            <h2 class="section-title cijenik">Cijenik</h2>
+            <h2 class="section-title cijenik">Cjenik</h2>
             <h3 class="cijene">Cijene radova</h3>
+            <p class="cijene-napomena">Sve cijene izražene su u eurima po 1 m².</p>
+
+            <a href="assets/cijenik/B&R Interijeri Cjenik.csv" class="csv-btn" download>
+                Preuzmi cjenik CSV
+            </a>
+
+            <div class="pricing__header">
+                <div class="pricing__header-text">
+                    Naziv usluge
+                </div>
+
+                <div class="pricing__header-price">
+                    Cijena
+                </div>
+
+                <div class="pricing__header-price">
+                    Cijena na dan 10.09.2026.
+                </div>
+            </div>
 
             <h3 class="grupacije__cijena" id="spušteni-stropovi-c">Stropovi</h3>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada spuštenog ravnog stropa do 10 cm bez vune</h3>
+                    <p>Izrada spuštenog ravnog stropa do 10 cm bez vune</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>18 €/m²</strong>
+                    <strong>18</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>18</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada spuštenog ravnog stropa do 10 cm sa vunom debljine 5 cm</h3>
+                    <p>Izrada spuštenog ravnog stropa do 10 cm sa vunom debljine 5 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>20 €/m²</strong>
+                    <strong>20</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>20</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada spuštenog ravnog stropa do 25 cm bez vune</h3>
+                    <p>Izrada spuštenog ravnog stropa do 25 cm bez vune</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>20 €/m²</strong>
+                    <strong>20</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>20</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada spuštenog ravnog stropa do 25 cm sa vunom debljine 10 cm</h3>
+                    <p>Izrada spuštenog ravnog stropa do 25 cm sa vunom debljine 10 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>22 €/m²</strong>
+                    <strong>22</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>22</strong> €
                 </div>
             </div>
 
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada kosog stropa do 5 cm sa vunom i paropropusnom folijom (staklena vuna 10 cm)</h3>
+                    <p>Izrada kosog stropa do 5 cm sa vunom i paropropusnom folijom (staklena vuna 10 cm)</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>25 €/m²</strong>
+                    <strong>25</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>25</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada kosog stropa do 10 cm sa vunom i paropropusnom folijom (staklena vuna 15 cm)</h3>
+                    <p>Izrada kosog stropa do 10 cm sa vunom i paropropusnom folijom (staklena vuna 15 cm)</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>27 €/m²</strong>
+                    <strong>27</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>27</strong> €
                 </div>
             </div>
 
             <h3 class="grupacije__cijena" id="oblaganje-zidova-c">Oblaganje zidova</h3>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Oblaganje zida s lijepljenjem gips-kartonskim pločama</h3>
+                    <p>Oblaganje zida s lijepljenjem gips-kartonskim pločama</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>10 €/m²</strong>
+                    <strong>10</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>10</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Oblaganje zida s podkonstrukcijom bez vune</h3>
+                    <p>Oblaganje zida s podkonstrukcijom bez vune</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>14 €/m²</strong>
+                    <strong>14</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>14</strong> €
                 </div>
             </div>
 
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Oblaganje zida s podkonstrukcijom s vunom 5 cm</h3>
+                    <p>Oblaganje zida s podkonstrukcijom s vunom 5 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>17 €/m²</strong>
+                    <strong>17</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>17</strong> €
                 </div>
             </div>
 
             <h3 class="grupacije__cijena" id="pregradni-zidovi-c">Pregradni zidovi</h3>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada pregradnog zida debljine 10 cm</h3>
+                    <p>Izrada pregradnog zida debljine 10 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>23 €/m²</strong>
+                    <strong>23</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>23</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada pregradnog zida debljine 12,5 cm</h3>
+                    <p>Izrada pregradnog zida debljine 12,5 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>25 €/m²</strong>
+                    <strong>25</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>25</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada pregradnog zida debljine 15 cm</h3>
+                    <p>Izrada pregradnog zida debljine 15 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>27 €/m²</strong>
+                    <strong>27</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>27</strong> €
                 </div>
             </div>
 
             <h3 class="grupacije__cijena" id="ostali-radovi-c">Ostali radovi</h3>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada L kutije do 20 cm</h3>
+                    <p>Izrada L kutije do 20 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>20 €/m²</strong>
+                    <strong>20</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>20</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada L kutije do 50 cm</h3>
+                    <p>Izrada L kutije do 50 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>22 €/m²</strong>
+                    <strong>22</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>22</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada U kutije do 20 cm</h3>
+                    <p>Izrada U kutije do 20 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>23 €/m²</strong>
+                    <strong>23</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>23</strong> €
                 </div>
             </div>
             <div class="pricing__item">
                 <div class="pricing__text">
-                    <h3>Izrada U kutije do 50 cm</h3>
+                    <p>Izrada U kutije do 50 cm</p>
                 </div>
                 <div class="pricing__price">
-                    od <strong>25 €/m²</strong>
+                    <strong>25</strong> €
+                </div>
+                <div class="pricing__price">
+                    <strong>25</strong> €
                 </div>
             </div>
         </section>
@@ -226,13 +290,13 @@
                 <a href="tel:+385998270154" class="footer__icon"><i class='bx bx-phone'></i></a>
             </div>
             <div class="footer__tel">
-                <p>tel: +38595998270154</p>
+                <p>tel: +385998270154</p>
             </div>
             <p class="footer__copy">&#169; B&R Interijeri. All rights reserved</p>
         </footer>
 
         <!-- ===== SCROLL TOP BUTTON ===== -->
-        <a href="#home" class="scroll-top" id="scroll-top">
+        <a href="#" class="scroll-top" id="scroll-top">
             <i class='bx bx-up-arrow-alt'></i>
         </a>
 

@@ -1,13 +1,33 @@
 /*===== MENU SHOW =====*/
+// const showMenu = (toggleId, navId) => {
+//     const toggle = document.getElementById(toggleId),
+//         nav = document.getElementById(navId);
+//     if (toggle && nav) {
+//         toggle.addEventListener('click', () => {
+//             nav.classList.toggle('show');
+//         });
+//     }
+// };
+// showMenu('nav-toggle', 'nav-menu');
+
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId);
+        nav = document.getElementById(navId),
+        icon = toggle.querySelector('i');
+
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
             nav.classList.toggle('show');
+
+            if (nav.classList.contains('show')) {
+                icon.classList.replace('bx-menu', 'bx-x');
+            } else {
+                icon.classList.replace('bx-x', 'bx-menu');
+            }
         });
     }
 };
+
 showMenu('nav-toggle', 'nav-menu');
 
 /*===== REMOVE MENU MOBILE =====*/
@@ -100,7 +120,7 @@ revealIfExists('.skills__img', { delay: 200 });
 revealIfExists('.skills__data', { interval: 150 });
 
 /* ===== WORK / GALERIJA ===== */
-revealIfExists('.section-title', { interval: 120 }); 
+revealIfExists('.section-title', { interval: 120 });
 revealIfExists('.masonry-item', { interval: 100, distance: '30px', origin: 'bottom' });
 revealIfExists('.masonry-item h3', { delay: 100, distance: '20px', origin: 'bottom' });
 revealIfExists('.masonry-item p', { delay: 150, distance: '20px', origin: 'bottom' });
@@ -110,8 +130,22 @@ revealIfExists('.contact__input', { interval: 150 });
 
 /* ===== CIJENIK ===== */
 revealIfExists('#pricing .section-title');
-revealIfExists('.cijene', { delay: 20 });
-revealIfExists('.pricing__item', { interval: 50 });
+
+revealIfExists('.cijene, .cijene-napomena, .grupacije__cijena, .pricing__header', {
+    delay: 20
+});
+
+/* CSV BUTTON */
+revealIfExists('.csv-btn', {
+    scale: 0.1,
+    duration: 800,
+    delay: 10,
+    opacity: 1
+});
+
+revealIfExists('.pricing__item', {
+    interval: 50
+});
 
 /*===== SCROLL TOP =====*/
 const scrollTop = document.getElementById('scroll-top');
