@@ -171,6 +171,10 @@ img {
   right: 0;
 }
 
+.nav__menu.no-anim {
+  transition: none !important;
+}
+
 /*===== HOME =====*/
 .home {
   position: relative;
@@ -605,4 +609,22 @@ img {
 .lightbox-prev:hover,
 .lightbox-next:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+/* ===== SCROLL REVEAL ===== */
+.js-reveal {
+  opacity: var(--sr-opacity, 0);
+  translate: var(--sr-x, 0px) var(--sr-y, 0px);
+  scale: var(--sr-scale, 1);
+}
+
+.js-reveal.is-revealed {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+
+  transition:
+    opacity var(--sr-duration, 600ms) var(--sr-easing, ease) var(--sr-delay, 0ms),
+    translate var(--sr-duration, 600ms) var(--sr-easing, ease) var(--sr-delay, 0ms),
+    scale var(--sr-duration, 600ms) var(--sr-easing, ease) var(--sr-delay, 0ms);
 }
